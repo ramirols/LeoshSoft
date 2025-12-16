@@ -1,0 +1,36 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+  <article
+    class="max-w-3xl mx-auto py-14 px-6 prose prose-neutral dark:prose-invert"
+  >
+    {
+      frontmatter.cover && (
+        <img
+          src={frontmatter.cover}
+          alt={frontmatter.title}
+          class="rounded-xl mb-8"
+        />
+      )
+    }
+
+    <h1 class="text-4xl font-bold text-gray-900 mb-4">{frontmatter.title}</h1>
+
+    <p class="text-gray-500 text-sm mb-8">
+      {new Date(frontmatter.date).toLocaleDateString("es-PE")} · {
+        frontmatter.author
+      }
+    </p>
+
+    <slot />
+
+    <section class="mt-20">
+      <h2 class="text-2xl font-semibold mb-6">Artículos relacionados</h2>
+      <slot name="related" />
+    </section>
+  </article>
+</BaseLayout>

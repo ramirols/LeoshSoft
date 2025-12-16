@@ -1,0 +1,86 @@
+---
+import { ArrowUpRight } from "lucide-astro";
+
+// Aquí agregas tus proyectos:
+const projects = [
+  {
+    title: "Tienda online — MinimalStore",
+    description: "Diseño y desarrollo de una tienda rápida con checkout simple.",
+    result: "Incremento del 40% en conversiones.",
+    image: "/projects/minimalstore.jpg",
+    url: "https://minimalstore.com",
+  },
+  {
+    title: "Landing page — FitCoach",
+    description: "Página de ventas optimizada para anuncios y conversiones.",
+    result: "CPL reducido en 32% con una landing ultra rápida.",
+    image: "/projects/fitcoach.jpg",
+    url: "https://fitcoach.com",
+  },
+  {
+    title: "Web corporativa — NovaTech",
+    description: "Sitio moderno para posicionar la marca y captar leads B2B.",
+    result: "Mejora de velocidad 92/100 en Lighthouse.",
+    image: "/projects/novatech.jpg",
+    url: "https://novatech.com",
+  },
+];
+---
+
+<section id="portafolio" class="bg-gray-50 py-24">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+
+    <!-- Título -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-extrabold text-primary">Portafolio</h2>
+      <p class="text-gray-600 mt-4 text-lg">
+        Algunos de los proyectos que he desarrollado
+      </p>
+    </div>
+
+    <!-- GRID -->
+    <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+
+      {projects.map(project => (
+        <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition overflow-hidden group">
+
+          <!-- Imagen -->
+          <a href={project.url} target="_blank" rel="noopener noreferrer">
+            <img 
+              src={project.image} 
+              alt={project.title} 
+              class="w-full h-48 object-cover group-hover:scale-105 transition duration-500"
+            />
+          </a>
+
+          <!-- Info -->
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 text-primary">{project.title}</h3>
+
+            <p class="text-gray-600 text-sm mb-4">
+              {project.description}
+            </p>
+
+            <p class="text-secondary font-semibold mb-6">
+              {project.result}
+            </p>
+
+            <!-- Botón -->
+            <a 
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-primary font-semibold group-hover:text-accent transition"
+            >
+              Ver proyecto
+              <ArrowUpRight class="w-5 h-5" />
+            </a>
+          </div>
+
+        </div>
+      ))}
+
+    </div>
+
+  </div>
+</section>

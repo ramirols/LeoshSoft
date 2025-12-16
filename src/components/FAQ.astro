@@ -1,0 +1,90 @@
+---
+import { ChevronDown } from "lucide-astro";
+---
+
+<section id="faq" class="py-20 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            Preguntas Frecuentes
+        </h2>
+
+        <div x-data="{ open: null }" class="space-y-4">
+            <!-- Item 1 -->
+            <div class="border rounded-xl bg-white overflow-hidden">
+                <button
+                    @click="open === 1 ? open = null : open = 1"
+                    class="w-full flex justify-between items-center p-5 text-left"
+                >
+                    <span class="text-lg font-semibold"
+                        >¿En cuánto tiempo entregan un proyecto?</span
+                    >
+                    <ChevronDown
+                        :class="open === 1 ? 'rotate-180' : ''"
+                        class="transition-transform"
+                    />
+                </button>
+
+                <div
+                    x-show="open === 1"
+                    x-collapse
+                    class="px-5 pb-5 text-gray-600"
+                >
+                    Depende del alcance. Proyectos pequeños toman entre 3 a 7
+                    días, mientras que los completos pueden variar entre 2 a 4
+                    semanas.
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="border rounded-xl bg-white overflow-hidden">
+                <button
+                    @click="open === 2 ? open = null : open = 2"
+                    class="w-full flex justify-between items-center p-5 text-left"
+                >
+                    <span class="text-lg font-semibold"
+                        >¿Ofrecen mantenimiento después de la entrega?</span
+                    >
+                    <ChevronDown
+                        :class="open === 2 ? 'rotate-180' : ''"
+                        class="transition-transform"
+                    />
+                </button>
+
+                <div
+                    x-show="open === 2"
+                    x-collapse
+                    class="px-5 pb-5 text-gray-600"
+                >
+                    Sí, brindamos soporte y mantenimiento mensual o por horas,
+                    según la necesidad del cliente.
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="border rounded-xl bg-white overflow-hidden">
+                <button
+                    @click="open === 3 ? open = null : open = 3"
+                    class="w-full flex justify-between items-center p-5 text-left"
+                >
+                    <span class="text-lg font-semibold"
+                        >¿Puedo solicitar cambios después del diseño inicial?</span
+                    >
+                    <ChevronDown
+                        :class="open === 3 ? 'rotate-180' : ''"
+                        class="transition-transform"
+                    />
+                </button>
+
+                <div
+                    x-show="open === 3"
+                    x-collapse
+                    class="px-5 pb-5 text-gray-600"
+                >
+                    Claro, el proyecto incluye una cantidad definida de
+                    revisiones. También ofrecemos revisiones adicionales si se
+                    requieren.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

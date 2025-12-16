@@ -1,0 +1,71 @@
+---
+import { SEO } from "astro-seo";
+import { Code, Laptop, ShoppingCart, Boxes } from "lucide-astro";
+---
+
+<SEO
+    title="Servicios | LeoshSoft"
+    description="Soluciones web modernas para negocios que quieren crecer en 2025"
+/>
+
+<section id="servicios" class="bg-white py-20">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-extrabold text-primary">Servicios</h2>
+            <p class="text-gray-600 mt-4 text-lg">
+                Soluciones web modernas para negocios que quieren crecer en 2025
+            </p>
+        </div>
+
+        <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+            <div
+                class="p-8 rounded-2xl shadow-lg bg-white hover:shadow-xl transition group"
+            >
+                <Laptop
+                    class="w-12 h-12 text-secondary mb-4 group-hover:scale-110 transition"
+                />
+                <h3 class="text-xl font-bold mb-2">Landing Pages</h3>
+                <p class="text-gray-600">
+                    Diseñadas para convertir visitas en clientes.
+                </p>
+            </div>
+
+            <div
+                class="p-8 rounded-2xl shadow-lg bg-white hover:shadow-xl transition group"
+            >
+                <Code
+                    class="w-12 h-12 text-accent mb-4 group-hover:scale-110 transition"
+                />
+                <h3 class="text-xl font-bold mb-2">Web Corporativas</h3>
+                <p class="text-gray-600">
+                    Sitios modernos, rápidos y optimizados para SEO.
+                </p>
+            </div>
+
+            <div
+                class="p-8 rounded-2xl shadow-lg bg-white hover:shadow-xl transition group"
+            >
+                <ShoppingCart
+                    class="w-12 h-12 text-secondary mb-4 group-hover:scale-110 transition"
+                />
+                <h3 class="text-xl font-bold mb-2">E-commerce básico</h3>
+                <p class="text-gray-600">
+                    Catálogos simples con carrito funcional.
+                </p>
+            </div>
+
+            <div
+                class="p-8 rounded-2xl shadow-lg bg-white hover:shadow-xl transition group"
+            >
+                <Boxes
+                    class="w-12 h-12 text-accent mb-4 group-hover:scale-110 transition"
+                />
+                <h3 class="text-xl font-bold mb-2">Software a medida</h3>
+                <p class="text-gray-600">
+                    Sistemas internos, automatización y herramientas
+                    personalizadas.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

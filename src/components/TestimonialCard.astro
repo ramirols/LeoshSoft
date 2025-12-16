@@ -1,0 +1,68 @@
+---
+import { Quote } from "lucide-astro";
+
+const testimonials = [
+  {
+    name: "Carlos Fernández",
+    role: "Dueño de Negocio",
+    message:
+      "Ramiro creó una web rápida, moderna y totalmente optimizada para nuestro negocio. Desde el primer mes aumentaron los clientes que llegaban por la web.",
+    avatar: "https://i.pravatar.cc/150?img=12"
+  },
+  {
+    name: "María Valdivia",
+    role: "Emprendedora",
+    message:
+      "El nivel de detalle y profesionalismo fue increíble. ¡Además entregó antes del plazo! Quedé muy feliz con mi landing page.",
+    avatar: "https://i.pravatar.cc/150?img=32"
+  },
+  {
+    name: "Jorge Castillo",
+    role: "CEO",
+    message:
+      "Necesitábamos una web corporativa que reflejara seriedad, velocidad y buen SEO. Ramiro lo logró al 100%. Recomiendo su trabajo totalmente.",
+    avatar: "https://i.pravatar.cc/150?img=45"
+  },
+];
+---
+
+<section id="testimonios" class="py-20 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-6">
+    
+    <!-- Título -->
+    <div class="text-center mb-14">
+      <h2 class="text-4xl font-bold text-gray-900 mb-3">Testimonios</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Opiniones reales de clientes que confiaron en mi trabajo profesional.
+      </p>
+    </div>
+
+    <!-- Grid de testimonios -->
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+      {testimonials.map((t) => (
+        <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+          <!-- Icono -->
+          <Quote class="w-10 h-10 text-blue-600 mb-4" />
+
+          <!-- Mensaje -->
+          <p class="text-gray-700 leading-relaxed mb-6">
+            {t.message}
+          </p>
+
+          <!-- Autor -->
+          <div class="flex items-center gap-4">
+            <img
+              src={t.avatar}
+              alt={t.name}
+              class="w-14 h-14 rounded-full object-cover border"
+            />
+            <div>
+              <h4 class="font-semibold text-gray-900">{t.name}</h4>
+              <p class="text-sm text-gray-500">{t.role}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
