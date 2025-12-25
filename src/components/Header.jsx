@@ -61,7 +61,7 @@ const Header = () => {
                     : "bg-transparent"}
             `}
         >
-            <div className="container mx-auto px-6 py-3 flex items-center">
+            <div className="max-w-6xl mx-auto px-6 py-3 flex items-center">
                 <a
                     href="/"
                     className="text-3xl font-black tracking-wider flex-shrink-0"
@@ -116,7 +116,7 @@ const Header = () => {
 
             {/* Overlay */}
             {isOpen && (
-                <div className="fixed inset-0 h-[100dvh] bg-black/30 backdrop-blur-xl z-[110]" />
+                <div className="fixed inset-0 h-[100dvh] bg-black/30 backdrop-blur-sm z-[110]" />
             )}
 
             {/* Panel móvil */}
@@ -125,7 +125,7 @@ const Header = () => {
                 className={`
                     fixed top-0 right-0
                     h-[100dvh] w-[75%]
-                    bg-black/80 backdrop-blur-xl
+                    bg-black/80 backdrop-blur-sm
                     z-[120]
                     p-10 pt-14
                     flex flex-col gap-10

@@ -1,28 +1,28 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Slider";
-import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header";
 import Services from "../components/Services.astro";
 import PortfolioGrid from "../components/PortfolioGrid.astro";
 import TestimonialCard from "../components/TestimonialCard.astro";
 import BlogCard from "../components/BlogCard.astro";
+import FAQ from "../components/FAQ.astro";
+import ContactForm from "../components/ContactForm.astro";
 
 import { getCollection } from "astro:content";
 
 const posts = await getCollection("blog");
 const latest = posts.slice(0, 3);
-
-import FAQ from "../components/FAQ.astro";
-import ContactForm from "../components/ContactForm.astro";
-import Footer from "../components/Footer.astro";
 ---
 
-<Layout>
-	<Header client:load />
+<BaseLayout
+	title="LeoryenSoft | Desarrollo de Software y Páginas Web"
+	description="LeoryenSoft ofrece desarrollo de software, páginas web profesionales, SEO y soluciones digitales a medida."
+>
 	<Hero client:load />
 	<Services />
 	<PortfolioGrid />
 	<TestimonialCard />
+
 	<section class="max-w-6xl mx-auto px-6 py-16">
 		<h2 class="text-3xl font-bold mb-8">Últimos artículos</h2>
 
@@ -30,7 +30,7 @@ import Footer from "../components/Footer.astro";
 			{latest.map((post) => <BlogCard post={post} />)}
 		</div>
 	</section>
+
 	<FAQ />
 	<ContactForm />
-	<Footer />
-</Layout>
+</BaseLayout>

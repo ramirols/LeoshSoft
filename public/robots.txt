@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://leoryensoft.vercel.app/sitemap-index.xml

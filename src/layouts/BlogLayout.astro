@@ -1,13 +1,15 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
-
 const { frontmatter } = Astro.props;
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description}>
-  <article
-    class="max-w-3xl mx-auto py-14 px-6 prose prose-neutral dark:prose-invert"
-  >
+<BaseLayout
+  title={`${frontmatter.title} | LeoryenSoft`}
+  description={frontmatter.description}
+  image={frontmatter.cover}
+  type="article"
+>
+  <article class="max-w-3xl mx-auto py-14 px-6 prose prose-neutral">
     {
       frontmatter.cover && (
         <img
@@ -18,7 +20,7 @@ const { frontmatter } = Astro.props;
       )
     }
 
-    <h1 class="text-4xl font-bold text-gray-900 mb-4">{frontmatter.title}</h1>
+    <h1>{frontmatter.title}</h1>
 
     <p class="text-gray-500 text-sm mb-8">
       {new Date(frontmatter.date).toLocaleDateString("es-PE")} · {
@@ -29,7 +31,7 @@ const { frontmatter } = Astro.props;
     <slot />
 
     <section class="mt-20">
-      <h2 class="text-2xl font-semibold mb-6">Artículos relacionados</h2>
+      <h2>Artículos relacionados</h2>
       <slot name="related" />
     </section>
   </article>
