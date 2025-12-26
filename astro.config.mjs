@@ -15,5 +15,5 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
   integrations: [react(), sitemap(), mdx()],
-  site: 'https://leoshsoft.vercel.app',
+  site: 'https://leoryensoft.vercel.app',
 });
