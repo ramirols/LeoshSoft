@@ -1,95 +1,176 @@
 ---
-import { SEO } from "astro-seo";
-import { Code, Laptop, ShoppingCart, Boxes, TabletSmartphone, BrainCircuit } from "lucide-astro";
+import {
+    Code,
+    Laptop,
+    Boxes,
+    Check,
+    Zap,
+    Rocket,
+    MessageCircle,
+    ShieldCheck,
+} from "lucide-astro";
 ---
 
-<SEO
-    title="Servicios | LeoshSoft"
-    description="Soluciones web modernas para negocios que quieren crecer en 2025"
-/>
+<section
+    id="planes-precios"
+    class="bg-white py-24"
+    aria-labelledby="planes-title"
+>
+    <div class="max-w-6xl mx-auto px-6">
+        <header class="text-center mb-20">
+            <h2 id="planes-title" class="text-4xl font-extrabold text-gray-900">
+                Planes y precios de nuestros servicios
+            </h2>
 
-<section id="servicios" class="bg-white py-20">
-    <div class="max-w-6xl mx-auto px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-extrabold text-primary">Servicios</h2>
-            <p class="text-gray-600 mt-4 text-lg">
-                Soluciones web modernas para negocios que quieren crecer en 2025
+            <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+                Estos son nuestros servicios más contratados. Todos incluyen
+                optimización SEO, alto rendimiento y soporte profesional.
             </p>
-        </div>
+        </header>
 
-        <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-            <div
-                class="p-8 rounded-2xl shadow-lg bg-white hover:shadow-xl transition group"
+        <div class="grid gap-10 md:grid-cols-3">
+            <!-- PLAN BÁSICO -->
+            <article
+                class="group rounded-2xl p-8 border border-gray-200 bg-white shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
             >
                 <Laptop
-                    class="w-12 h-12 text-secondary mb-4 group-hover:scale-110 transition"
+                    class="w-12 h-12 text-blue-600 mb-6 group-hover:scale-110 group-hover:rotate-3 transition"
                 />
-                <h3 class="text-xl font-bold mb-2">Landing Pages</h3>
-                <p class="text-gray-600">
-                    Diseñadas para convertir visitas en clientes.
-                </p>
-            </div>
 
-            <div
-                class="p-8 rounded-2xl shadow-lg bg-white hover:shadow-xl transition group"
+                <span
+                    class="inline-block mb-4 text-sm bg-blue-50 text-blue-600 px-3 py-1 rounded-full"
+                >
+                    Ideal para emprendedores
+                </span>
+
+                <h3 class="text-2xl font-bold mb-4 text-gray-900">
+                    Landing Page Profesional
+                </h3>
+
+                <p class="text-4xl font-extrabold mb-6 text-gray-900">
+                    $199 <span class="text-base font-normal text-gray-500"
+                        >USD</span
+                    >
+                </p>
+
+                <ul class="space-y-3 text-gray-600 mb-8">
+                    <li class="flex items-center gap-2">
+                        <Check class="w-5 h-5 text-green-500" /> Diseño moderno y
+                        responsive
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <Zap class="w-5 h-5 text-green-500" /> SEO básico optimizado
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <Rocket class="w-5 h-5 text-green-500" /> Velocidad optimizada
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <MessageCircle class="w-5 h-5 text-green-500" /> Formulario
+                        de contacto
+                    </li>
+                </ul>
+
+                <a
+                    href="#contacto"
+                    class="block text-center rounded-xl py-3 font-semibold bg-blue-600 text-white hover:bg-blue-700 transition"
+                >
+                    Comenzar ahora
+                </a>
+            </article>
+
+            <!-- PLAN POPULAR -->
+            <article
+                class="group relative rounded-2xl p-8 border-2 border-blue-600 bg-white shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-300"
             >
+                <span
+                    class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-4 py-1 text-sm rounded-full"
+                >
+                    Más vendido
+                </span>
+
                 <Code
-                    class="w-12 h-12 text-accent mb-4 group-hover:scale-110 transition"
+                    class="w-12 h-12 text-blue-600 mb-6 group-hover:scale-110 group-hover:rotate-3 transition"
                 />
-                <h3 class="text-xl font-bold mb-2">Web Corporativas</h3>
-                <p class="text-gray-600">
-                    Sitios modernos, rápidos y optimizados para SEO.
-                </p>
-            </div>
 
-            <div
-                class="p-8 rounded-2xl shadow-lg bg-white hover:shadow-xl transition group"
-            >
-                <ShoppingCart
-                    class="w-12 h-12 text-secondary mb-4 group-hover:scale-110 transition"
-                />
-                <h3 class="text-xl font-bold mb-2">E-commerce básico</h3>
-                <p class="text-gray-600">
-                    Catálogos simples con carrito funcional.
-                </p>
-            </div>
+                <h3 class="text-2xl font-bold mb-4 text-gray-900">
+                    Web Corporativa
+                </h3>
 
-            <div
-                class="p-8 rounded-2xl shadow-lg bg-white hover:shadow-xl transition group"
+                <p class="text-4xl font-extrabold mb-6 text-gray-900">
+                    $499 <span class="text-base font-normal text-gray-500"
+                        >USD</span
+                    >
+                </p>
+
+                <ul class="space-y-3 text-gray-600 mb-8">
+                    <li class="flex items-center gap-2">
+                        <Check class="w-5 h-5 text-green-500" /> Diseño moderno y
+                        responsive
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <Zap class="w-5 h-5 text-green-500" /> SEO avanzado
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <Rocket class="w-5 h-5 text-green-500" /> Velocidad optimizada
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <MessageCircle class="w-5 h-5 text-green-500" /> Formulario
+                        de contacto
+                    </li>
+                </ul>
+
+                <a
+                    href="#contacto"
+                    class="block text-center rounded-xl py-3 font-semibold bg-blue-600 text-white hover:bg-blue-700 transition"
+                >
+                    Comenzar ahora
+                </a>
+            </article>
+
+            <!-- PLAN PREMIUM -->
+            <article
+                class="group rounded-2xl p-8 border border-gray-200 bg-white shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
             >
                 <Boxes
-                    class="w-12 h-12 text-accent mb-4 group-hover:scale-110 transition"
+                    class="w-12 h-12 text-blue-600 mb-6 group-hover:scale-110 group-hover:rotate-3 transition"
                 />
-                <h3 class="text-xl font-bold mb-2">Software a medida</h3>
-                <p class="text-gray-600">
-                    Sistemas internos, automatización y herramientas
-                    personalizadas.
-                </p>
-            </div>
 
-            <div
-                class="p-8 rounded-2xl shadow-lg bg-white hover:shadow-xl transition group"
-            >
-                <BrainCircuit
-                    class="w-12 h-12 text-accent mb-4 group-hover:scale-110 transition"
-                />
-                <h3 class="text-xl font-bold mb-2">Automatizaciones con N8N</h3>
-                <p class="text-gray-600">
-                    Automatizaciones con N8N para optimizar procesos.
-                </p>
-            </div>
+                <span
+                    class="inline-block mb-4 text-sm bg-green-50 text-green-600 px-3 py-1 rounded-full"
+                >
+                    Empresas
+                </span>
 
-            <div
-                class="p-8 rounded-2xl shadow-lg bg-white hover:shadow-xl transition group"
-            >
-                <TabletSmartphone
-                    class="w-12 h-12 text-accent mb-4 group-hover:scale-110 transition"
-                />
-                <h3 class="text-xl font-bold mb-2">Aplicaciones Móviles</h3>
-                <p class="text-gray-600">
-                    Aplicaciones móviles a medida para tu empresa.
+                <h3 class="text-2xl font-bold mb-4 text-gray-900">
+                    Software a Medida
+                </h3>
+
+                <p class="text-4xl font-extrabold mb-6 text-gray-900">
+                    Desde $999
                 </p>
-            </div>
+
+                <ul class="space-y-3 text-gray-600 mb-8">
+                    <li class="flex items-center gap-2">
+                        <Code class="w-5 h-5 text-green-500" /> Desarrollo personalizado
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <Zap class="w-5 h-5 text-green-500" /> Automatizaciones
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <Rocket class="w-5 h-5 text-green-500" /> Escalabilidad
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <ShieldCheck class="w-5 h-5 text-green-500" /> Soporte prioritario
+                    </li>
+                </ul>
+
+                <a
+                    href="/servicios"
+                    class="block text-center rounded-xl py-3 font-semibold bg-gray-900 text-white hover:bg-gray-800 transition"
+                >
+                    Ver todos los servicios
+                </a>
+            </article>
         </div>
     </div>
 </section>
