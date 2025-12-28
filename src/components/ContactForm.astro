@@ -1,7 +1,7 @@
 ---
 const {
-    title = "Contáctame y hagamos realidad tu proyecto",
-    subtitle = "Cuéntame sobre tu idea, negocio o necesidad digital. Te responderé en menos de 24 horas.",
+    title = "Contáctanos y hagamos realidad tu proyecto",
+    subtitle = "Cuéntanos sobre tu idea, negocio o necesidad digital. Te responderemos en menos de 24 horas.",
 } = Astro.props;
 ---
 
@@ -55,7 +55,7 @@ const {
         <!-- Mensaje -->
         <div>
             <label for="message" class="block text-sm font-medium mb-1">
-                Cuéntame sobre tu proyecto
+                Cuéntanos sobre tu proyecto
             </label>
             <textarea
                 id="message"
@@ -74,11 +74,11 @@ const {
         <!-- CTA -->
         <button
             type="submit"
-            class="group relative w-full overflow-hidden rounded-xl bg-blue-600 py-3 font-semibold text-white transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            class="group relative w-full overflow-hidden rounded-xl bg-secondary py-3 font-semibold text-white transition hover:bg-secondary/80 focus:outline-none focus:ring-2 focus:ring-secondary/80 cursor-pointer"
         >
             <span class="relative z-10">Enviar mensaje</span>
             <span
-                class="absolute inset-0 -translate-x-full bg-blue-700 transition-transform duration-300 group-hover:translate-x-0"
+                class="absolute inset-0 -translate-x-full bg-secondary/80 transition-transform duration-300 group-hover:translate-x-0"
             ></span>
         </button>
 

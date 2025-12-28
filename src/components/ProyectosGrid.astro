@@ -2,23 +2,23 @@
 import { getCollection } from "astro:content";
 import { ArrowUpRight } from "lucide-astro";
 
-const projects = (await getCollection("portafolio"))
+const projects = (await getCollection("proyectos"))
   .filter((p) => p.data.featured)
   .slice(0, 3);
 ---
 
-<section id="portafolio" class="bg-gray-50 py-24">
+<section id="proyectos" class="bg-gray-50 py-24">
   <div class="max-w-6xl mx-auto px-6 lg:px-8">
     <div class="flex items-center justify-between mb-16">
       <div>
-        <h2 class="text-4xl font-extrabold text-primary">Portafolio</h2>
+        <h2 class="text-4xl font-extrabold text-primary">Proyectos</h2>
         <p class="text-gray-600 mt-4 text-lg">
-          Algunos de los proyectos más influyentes
+          Algunos de nuestros proyectos más influyentes
         </p>
       </div>
 
       <a
-        href="/portafolio"
+        href="/proyectos"
         class="hidden md:inline-flex items-center gap-2 text-primary font-semibold hover:text-accent transition"
       >
         Ver todos
@@ -30,7 +30,7 @@ const projects = (await getCollection("portafolio"))
       {
         projects.map((project) => (
           <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition overflow-hidden group">
-            <a href={`/portafolio/${project.id}`}>
+            <a href={`/proyectos/${project.id}`}>
               <img
                 src={project.data.cover}
                 alt={project.data.title}
@@ -52,7 +52,7 @@ const projects = (await getCollection("portafolio"))
               </p>
 
               <a
-                href={`/portafolio/${project.id}`}
+                href={`/proyectos/${project.id}`}
                 class="inline-flex items-center gap-2 text-primary font-semibold hover:text-accent transition"
               >
                 Ver proyecto

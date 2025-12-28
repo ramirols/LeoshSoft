@@ -11,7 +11,7 @@ const blogCollection = defineCollection({
     }),
 });
 
-const portafolioCollection = defineCollection({
+const proyectosCollection = defineCollection({
     schema: z.object({
         title: z.string(),
         description: z.string(),
@@ -25,5 +25,5 @@ const portafolioCollection = defineCollection({
 
 export const collections = {
     blog: blogCollection,
-    portafolio: portafolioCollection,
+    proyectos: proyectosCollection,
 };

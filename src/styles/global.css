@@ -6,8 +6,14 @@
     --color-accent: #f7df1e;
 }
 
+body,
 html {
     font-family: "Clash", system-ui, sans-serif;
+    scroll-behavior: smooth;
+}
+
+strong {
+    color: var(--color-secondary);
 }
 
 .swiper-pagination {

@@ -26,7 +26,7 @@ export default function Slider() {
     const [activeIndex, setActiveIndex] = useState(0);
 
     return (
-        <section className="relative min-h-screen text-white overflow-hidden">
+        <section className="relative min-h-screen text-white overflow-hidden" id="inicio">
             <div
                 className="absolute inset-0 bg-cover bg-top"
                 style={{

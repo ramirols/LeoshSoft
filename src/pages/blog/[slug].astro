@@ -22,17 +22,29 @@ const related = allPosts.filter((p) => p.id !== post.id).slice(0, 3);
 <BlogLayout frontmatter={post.data}>
     <Content />
 
-    <div slot="related" class="grid sm:grid-cols-2 gap-6">
+    <div slot="related">
         {
             related.map((r) => (
                 <a
                     href={`/blog/${r.id}`}
-                    class="block p-5 border rounded-xl hover:bg-gray-50 transition"
+                    class="group block border rounded-2xl overflow-hidden hover:shadow-lg transition"
                 >
-                    <h3 class="font-semibold text-lg">{r.data.title}</h3>
-                    <p class="text-sm text-gray-600 mt-2">
-                        {r.data.description}
-                    </p>
+                    {r.data.cover && (
+                        <img
+                            src={r.data.cover}
+                            alt={r.data.title}
+                            class="h-40 w-full object-cover group-hover:scale-105 transition"
+                        />
+                    )}
+
+                    <div class="p-5">
+                        <h3 class="font-semibold text-lg leading-snug">
+                            {r.data.title}
+                        </h3>
+                        <p class="text-sm text-gray-600 mt-2">
+                            {r.data.description}
+                        </p>
+                    </div>
                 </a>
             ))
         }

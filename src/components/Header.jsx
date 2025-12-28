@@ -15,7 +15,7 @@ const Header = () => {
 
     const navLinks = [
         { name: "Servicios", href: "/servicios", icon: <FiGrid /> },
-        { name: "Portafolio", href: "/portafolio", icon: <FiBriefcase /> },
+        { name: "Proyectos", href: "/proyectos", icon: <FiBriefcase /> },
         { name: "Blog", href: "/blog", icon: <FiBookOpen /> },
     ];
 
@@ -67,7 +67,7 @@ const Header = () => {
             <div className="max-w-6xl mx-auto px-6 py-3 flex items-center">
                 {/* Logo */}
                 <a
-                    href="/"
+                    href="/#inicio"
                     className="text-3xl font-black tracking-wider flex-shrink-0 transition-transform hover:scale-105"
                 >
                     <span className={`text-secondary ${scrolled ? "text-primary" : ""}`}>Leoryen</span>
@@ -80,7 +80,7 @@ const Header = () => {
                         <a
                             key={link.name}
                             href={link.href}
-                            className="flex items-center gap-2 text-white/90 text-lg font-medium hover:text-secondary transition-all"
+                            className="flex items-center gap-2 text-white/90 text-lg font-medium hover:text-accent transition-all"
                         >
                             <span className="text-xl">{link.icon}</span>
                             {link.name}
@@ -91,7 +91,7 @@ const Header = () => {
                 {/* Desktop CTA */}
                 <div className="hidden md:flex">
                     <a
-                        href="/contacto"
+                        href="/#contacto"
                         className={`flex items-center gap-2 py-2.5 px-6 text-lg font-bold rounded-full
               bg-accent text-primary hover:bg-secondary hover:text-white transition-all`}
                     >
