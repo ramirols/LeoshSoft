@@ -18,8 +18,7 @@ const {
 
     <!-- Form -->
     <form
-        action="https://formspree.io/f/your-form-id"
-        method="POST"
+        id="contactForm"
         class="space-y-6 bg-white shadow-2xl p-8 md:p-10 rounded-3xl border animate-fade-up animation-delay-200"
     >
         <!-- Nombre -->
@@ -89,6 +88,35 @@ const {
         </p>
     </form>
 </section>
+
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("contactForm");
+        if (!form) return;
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const data = new FormData(form);
+
+            const name = data.get("name");
+            const email = data.get("email");
+            const message = data.get("message");
+
+            const whatsappMessage = `
+Hola 👋, soy *${name}*
+
+📧 Email: ${email}
+
+💬 Mensaje:
+${message}
+            `;
+
+            const url = `https://wa.me/51997676432?text=${encodeURIComponent(whatsappMessage)}`;
+            window.open(url, "_blank");
+        });
+    });
+</script>
 
 <style>
     @keyframes fade-up {
