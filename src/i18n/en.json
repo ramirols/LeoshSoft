@@ -1,0 +1,13 @@
+{
+    "nav": {
+        "home": "Home",
+        "services": "Services",
+        "projects": "Projects",
+        "blog": "Blog",
+        "contact": "Contact"
+    },
+    "hero": {
+        "title": "We build software that sells",
+        "subtitle": "Custom digital solutions"
+    }
+}

@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro";
 import { AstroSEO } from "astro-seo-plugin";
 
 const {
+    lang = "es",
     title = "LeoryenSoft | Desarrollo Web Profesional",
     description = "Desarrollo de páginas web modernas, rápidas y optimizadas para negocios.",
     image = "/og-default.jpg",
@@ -14,14 +15,14 @@ const {
 const canonical = Astro.url.href;
 ---
 
-<Layout>
+<Layout lang={lang}>
     <AstroSEO
         title={title}
         description={description}
         canonical={canonical}
         openGraph={{
             type,
-            locale: "es_ES",
+            locale: lang === "es" ? "es_ES" : "en_US",
             url: canonical,
             siteName: "LeoryenSoft",
             images: [

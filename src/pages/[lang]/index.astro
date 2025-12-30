@@ -1,0 +1,88 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Hero from "../../components/Slider";
+import Services from "../../components/Services.astro";
+import ProyectosGrid from "../../components/ProyectosGrid.astro";
+import TestimonialSlider from "../../components/TestimonialSlider.jsx";
+import BlogCard from "../../components/BlogCard.astro";
+import FAQ from "../../components/FAQ.astro";
+import ContactForm from "../../components/ContactForm.astro";
+
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+	return [{ params: { lang: "es" } }, { params: { lang: "en" } }];
+}
+
+const { lang } = Astro.params;
+
+const posts = await getCollection("blog");
+const latest = posts.slice(0, 3);
+
+const servicios =
+	lang === "es"
+		? [
+				{
+					nombre: "Landing Page",
+					descripcion: "Página web profesional para emprendedores",
+					imagen: "",
+				},
+				{
+					nombre: "Web Corporativa",
+					descripcion: "Web empresarial optimizada para SEO",
+					imagen: "",
+				},
+				{
+					nombre: "Software a Medida",
+					descripcion: "Sistemas personalizados para empresas",
+					imagen: "",
+				},
+			]
+		: [
+				{
+					nombre: "Landing Page",
+					descripcion: "Professional landing page",
+					imagen: "",
+				},
+				{
+					nombre: "Corporate Website",
+					descripcion: "SEO optimized corporate website",
+					imagen: "",
+				},
+				{
+					nombre: "Custom Software",
+					descripcion: "Tailored software solutions",
+					imagen: "",
+				},
+			];
+---
+
+<BaseLayout
+	lang={lang}
+	title={lang === "es"
+		? "LeoryenSoft | Desarrollo de Software y Páginas Web"
+		: "LeoryenSoft | Software & Web Development"}
+	description={lang === "es"
+		? "Desarrollo de software, páginas web y SEO"
+		: "Custom software, websites and SEO"}
+>
+	<h1 class="sr-only">
+		LeoryenSoft – Desarrollo de Software, Páginas Web y SEO en 2025
+	</h1>
+
+	<Hero client:load />
+	<Services servicios={servicios} />
+	<ProyectosGrid />
+	<TestimonialSlider client:load />
+
+	<section class="max-w-6xl mx-auto px-6 py-16">
+		<h2 class="text-3xl font-bold mb-8">Últimos artículos</h2>
+
+		<div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+			{latest.map((post) => <BlogCard post={post} />)}
+		</div>
+	</section>
+
+	<FAQ />
+	<ContactForm />
+</BaseLayout>
